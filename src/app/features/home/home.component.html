@@ -1,94 +1,127 @@
 <main>
-  <section>
+  <section class="top">
     <div>
-         <h1>
-      HI, MY NAME IS <span>LELA</span> <br />
-      AND YOU ARE IN MY PORTFOLIO!
-    </h1>
-    <div class="bio">
-      <h3 class="border">
-        Front-End Developer |<br />
-        Angular Developer
-      </h3>
-      <button>
-        <a href="assets/lela-akiashvili resume.pdf" target="_blank">Open CV</a>
-      </button>
-    </div>
-    </div>
-   <div>
-    <h2>PROJECTS</h2>
-    <div class="projects">
-      <div>
-        <img src="assets/CSS-final.png" alt="" />
-        <div class="description">
-          <h3><a href="https://first-final.netlify.app">Wix Template</a></h3>
-          <p>Used: HTML, SASS</p>
-        </div>
+      <h1>
+        HI, MY NAME IS <span>LELA</span> <br />
+        AND THIS IS MY PORTFOLIO!
+      </h1>
+      <div class="bio">
+        <h3 class="border">
+          Front-End Developer |<br />
+          Angular Developer
+        </h3>
+        <button>
+          <a href="assets/lela-akiashvili resume.pdf" target="_blank"
+            >Open CV</a
+          >
+        </button>
       </div>
-      <div>
-        <img src="assets/Javascript-final.png" alt="" />
-        <div class="description">
-          <h3>
-            <a href="https://qing-jing-final.netlify.app">Pocket Library</a>
-          </h3>
-          <p>Used: HTML, CSS, Javascript</p>
-        </div>
-      </div>
-      <div>
-        <img src="assets/angular-final.png" alt="" />
-        <div class="description">
-          <h3><a href="https://angular-final.netlify.app">Sport Today</a></h3>
-          <p>Used: HTML, CSS, TypeScript, Angular, Firestore Database</p>
-        </div>
+      <div class="left-border">
+        <h2>SKILLS</h2>
+        <h3>Languages:</h3>
+        <p>HTML, CSS, SASS/SCSS, JavaScript/TypeScript</p>
+
+        <h3>Framework:</h3>
+        <p>Angular, Bootstrap</p>
+        <h3>Version Contorl:</h3>
+        <p>Github, Netlify</p>
       </div>
     </div>
-   </div>
-    
+    <div>
+      <h2>PROJECTS</h2>
+      <div class="projects">
+        <div>
+          <img src="assets/CSS-final.png" alt="" />
+          <div class="description">
+            <h3><a href="https://first-final.netlify.app">Wix Template</a></h3>
+            <p>Used: HTML, SASS</p>
+          </div>
+        </div>
+        <div>
+          <img src="assets/Javascript-final.png" alt="" />
+          <div class="description">
+            <h3>
+              <a href="https://qing-jing-final.netlify.app">Pocket Library</a>
+            </h3>
+            <p>Used: HTML, CSS, Javascript</p>
+          </div>
+        </div>
+        <div>
+          <img src="assets/angular-final.png" alt="" />
+          <div class="description">
+            <h3><a href="https://angular-final.netlify.app">Sport Today</a></h3>
+            <p>Used: HTML, CSS, TypeScript, Angular, Firestore Database</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
-  <section>
+  <section class="bottom">
     <div class="contact">
-      <h2>CONTACT</h2>
-      <div >
-        <h3>
-          <i class="bi bi-linkedin"></i
-          ><a
-            href="https://www.linkedin.com/in/lela-akiashvili-25550b316"
-            target="_blank"
-            >Linkedin Account</a
-          >
-        </h3>
-        <h3>
-          <i class="bi bi-github"></i
-          ><a href="https://github.com/lela-akiashvili" target="_blank"
-            >GitHub Account</a
-          >
-        </h3>
-        <h3>
-          <i class="bi bi-facebook"></i
-          ><a
-            href="https://www.facebook.com/profile.php?id=100008093974011"
-            target="_blank"
-            >Facebook Account</a
-          >
-        </h3>
+      <div>
+        <h2>CONTACT</h2>
+        <div>
+          <h3>
+            <i class="bi bi-linkedin"></i
+            ><a
+              href="https://www.linkedin.com/in/lela-akiashvili-25550b316"
+              target="_blank"
+              >Linkedin Account</a
+            >
+          </h3>
+          <h3>
+            <i class="bi bi-github"></i
+            ><a href="https://github.com/lela-akiashvili" target="_blank"
+              >GitHub Account</a
+            >
+          </h3>
+          <h3>
+            <i class="bi bi-facebook"></i
+            ><a
+              href="https://www.facebook.com/profile.php?id=100008093974011"
+              target="_blank"
+              >Facebook Account</a
+            >
+          </h3>
+        </div>
       </div>
+
       <div>
         <h2 class="email">Get In Touch With Me!</h2>
-        <button>Write Me An Email</button>
-        <form action="">
-            <div>
-                <label for="email">Your Email</label>
-                <input type="email" id="email" placeholder="example@email.com">
-            </div>
-            <div>
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" placeholder='"Interview"'>
-            </div>
-            <div>
-                <label for="message">Your Message</label>
-                <textarea id="message" rows="8" cols="30"></textarea>
-            </div>
-            <button>Send Email</button>
+        <button (click)="onContact()">Write Me An Email</button>
+        <form
+          action=""
+          [style.display]="contact ? 'block' : 'none'"
+          [formGroup]="emailForm"
+        >
+          <div>
+            <label for="email">Your Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="example@email.com"
+              formControlName="email"
+            />
+          </div>
+          <div>
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              placeholder='"Interview"'
+              formControlName="subject"
+            />
+          </div>
+          <div>
+            <label for="message">Your Message</label>
+            <textarea
+              id="message"
+              rows="8"
+              cols="30"
+              formControlName="message"
+            ></textarea>
+          </div>
+          <button type="submit">Send Email</button>
         </form>
       </div>
     </div>
