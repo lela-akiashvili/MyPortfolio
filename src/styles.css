@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    color: rgb(210, 209, 209);
+    font-family: "Nunito", sans-serif;
+    
+}
+body{
+   scrollbar-width: 3px;
+}
