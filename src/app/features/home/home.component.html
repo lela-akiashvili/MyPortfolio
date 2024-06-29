@@ -93,6 +93,7 @@
           action=""
           [style.display]="contact ? 'block' : 'none'"
           [formGroup]="emailForm"
+          (ngSubmit)="sendEmail()"
         >
           <div>
             <label for="email">Your Email</label>
@@ -102,6 +103,9 @@
               placeholder="example@email.com"
               formControlName="email"
             />
+            @if (controls.email.dirty && controls.email.errors) {
+              <p style="color: red; margin-top: -1.5rem">email invalid!</p>
+            }
           </div>
           <div>
             <label for="subject">Subject</label>
@@ -111,6 +115,9 @@
               placeholder='"Interview"'
               formControlName="subject"
             />
+            @if (controls.subject.dirty && controls.subject.errors) {
+              <p style="color: red; margin-top: -1.5rem">subject invalid!</p>
+            }
           </div>
           <div>
             <label for="message">Your Message</label>
@@ -120,6 +127,11 @@
               cols="30"
               formControlName="message"
             ></textarea>
+            @if (controls.message.dirty && controls.message.errors) {
+              <p style="color: red; margin-top: -1.5rem">
+                message shouldn't be empty!
+              </p>
+            }
           </div>
           <button type="submit">Send Email</button>
         </form>
