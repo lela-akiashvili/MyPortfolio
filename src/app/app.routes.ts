@@ -16,4 +16,5 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/bio/bio.component').then((m) => m.BioComponent),
   },
+  { path: '', redirectTo:'home', pathMatch:'full' },
 ];
