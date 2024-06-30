@@ -1,26 +1,29 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './header.component.html',
   styles: `
     header {
       background-color: #191e39;
       color: white;
       font-family: 'Nunito', sans-serif;
-      padding:1.5rem;
+      padding:1.5rem 0 0 0;
     }
     ul {
       list-style: none;
       display: flex;
-      justify-content: flex-end;
       gap: 1rem;
+      padding:0;
+      justify-content:center;
     }
     li{
       border:1px solid;
       padding: 5px 15px; 
+      font-size:12.5px;
     }
     li:hover{
       cursor:pointer;
@@ -47,6 +50,17 @@ import { Component } from '@angular/core';
         border-left:1px solid white;
         border-top:1px solid white;
         border-right:1px solid white; 
+      }
+    }
+    @media (min-width:400px){
+      header{
+      padding:1.5rem;
+      }
+      ul{
+        justify-content: flex-end;
+      }
+      li{
+        font-size:unset;
       }
     }
   `,

@@ -1,9 +1,4 @@
-main {
-  min-height: 100vh;
-  padding: 1.5rem;
-  max-width: fit-content;
-  margin: auto;
-}
+
 section {
   margin-bottom: 6rem;
 }
@@ -38,16 +33,39 @@ span {
 }
 .left-border p {
   padding: 15px 0;
-  
 }
 .left-border h2 {
-   margin-bottom: 1rem;
-    
-  }
-  .left-border :last-child{
-    padding: 15px 0 0 0 ;
-    
-  }
+  margin-bottom: 1rem;
+}
+.left-border :last-child {
+  padding: 15px 0 0 0;
+}
+.left-border h2,
+.left-border h3,
+.left-border p {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.left-border h2 {
+  animation-delay: 0s;
+}
+
+.left-border h3:nth-of-type(1),
+.left-border p:nth-of-type(1) {
+  animation-delay: 0.5s;
+}
+
+.left-border h3:nth-of-type(2),
+.left-border p:nth-of-type(2) {
+  animation-delay: 1s;
+}
+
+.left-border h3:nth-of-type(3),
+.left-border p:nth-of-type(3) {
+  animation-delay: 1.5s;
+}
+
 .border {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
@@ -172,10 +190,10 @@ textarea:focus {
     margin: 0;
   }
 }
-@media (min-width: 1000px) {
-    section{
-        margin-bottom: 3rem;
-    }
+@media (min-width: 960px) {
+  section {
+    margin-bottom: 3rem;
+  }
   h1 {
     font-size: xxx-large;
   }
@@ -205,5 +223,15 @@ textarea:focus {
   }
   p {
     font-size: larger;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

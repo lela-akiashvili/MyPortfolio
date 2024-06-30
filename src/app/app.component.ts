@@ -9,10 +9,17 @@ import { HeaderComponent } from './shared/header/header.component';
   imports: [RouterOutlet, HeaderComponent, HomeComponent],
   template: `
     <app-header></app-header>
-    <app-home></app-home>
+ <main>
     <router-outlet></router-outlet>
+ </main> 
   `,
   styles: `
+main {
+    min-height: 100vh;
+    padding: 1.5rem;
+    max-width: fit-content;
+    margin: auto;
+  }
   `,
 })
 export class AppComponent {
