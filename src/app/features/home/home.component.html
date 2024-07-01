@@ -63,8 +63,8 @@
       </div>
     </div>
   </section>
-  <section class="bottom">
-    <div class="contact">
+  <section class="bottom" id="bottom">
+    <div class="contact" id="contact">
       <div>
         <h2>CONTACT</h2>
         <div>
@@ -100,7 +100,7 @@
           action=""
           [style.display]="contact ? 'block' : 'none'"
           [formGroup]="emailForm"
-          (ngSubmit)="sendEmail()"
+          (ngSubmit)="sendEmail()" id="form"
         >
           <div>
             <label for="email">Your Email</label>

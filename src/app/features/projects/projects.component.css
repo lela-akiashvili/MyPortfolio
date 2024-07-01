@@ -28,7 +28,7 @@ img {
 p.note, .code {
   margin: 1rem 0 0 0;
 }
-.code a, p a{
+.code a, p a {
   font-style: italic;
   color: rgb(0, 140, 255);
 }

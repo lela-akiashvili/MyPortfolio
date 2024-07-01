@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Subject } from 'rxjs';
 import emailjs from '@emailjs/browser';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -14,13 +15,14 @@ import emailjs from '@emailjs/browser';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   private fb = inject(FormBuilder);
   emailForm = this.fb.group({
     email: ['', Validators.email],
     subject: ['', Validators.required],
     message: ['', Validators.required],
   });
+  private activeRoute: ActivatedRoute = inject(ActivatedRoute);
   get controls() {
     return this.emailForm.controls;
   }
@@ -56,5 +58,17 @@ export class HomeComponent {
   onContact() {
     this.contact = !this.contact;
     this.emailForm.reset();
+  }
+  ngOnInit(): void {
+    this.activeRoute.fragment.subscribe((data) => {
+      if (data) {
+        this.jumpToSection(data);
+      }
+    });
+  }
+  jumpToSection(section: string) { 
+     this.onContact();
+    document.getElementById(section)!.scrollIntoView({ behavior: 'smooth' });
+  
   }
 }
