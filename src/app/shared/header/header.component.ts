@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterOutlet],
+  imports: [RouterLink],
   templateUrl: './header.component.html',
   styles: `
     header {
@@ -16,6 +16,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     ul {
       list-style: none;
       display: flex;
+      flex-wrap:wrap;
       gap: 1rem;
       padding:0;
       justify-content:center;

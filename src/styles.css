@@ -13,3 +13,94 @@ body{
     background-color:  rgb(210, 209, 209);
     border-radius: 10px;
 }
+
+.gradient{
+    background: linear-gradient(
+        180deg,
+        rgba(221, 200, 0, 1) 36%,
+        rgba(255, 0, 0, 1) 100%
+      );
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 3px;
+      /* font-size: 4.5rem; */
+}
+
+.projects {
+    padding: 15px 10px;
+    background-color: #15192f;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem 1rem;
+  }
+  .projects > div {
+    border-radius: 10px;
+    background-color: #1c2245;
+    border: 1px solid #303552;
+    overflow: hidden;
+  }
+  .description {
+    padding: 10px 15px;
+  }
+  .description h2 {
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .description p {
+    letter-spacing: 1px;
+  }
+  img {
+    width: 100%;
+  }
+  p.note, .code {
+    margin: 1rem 0 0 0;
+  }
+  .code a, p a {
+    font-style: italic;
+    color: rgb(0, 140, 255);
+  }
+  span {
+    font-weight: 800;
+  }
+  @media (min-width: 425px) {
+    main {
+      padding: 1.5rem 2.5rem;
+    }
+  }
+  @media (min-width: 615px) {
+    img {
+      width: 50%;
+      float: left;
+      border-bottom-right-radius: 15px;
+      margin-right: 1.5rem;
+    }
+    /* .description{
+      margin: 0 0 10px 20px ;
+    } */
+  }
+  @media (min-width: 768px) {
+    h2 {
+      font-size: x-large;
+    }
+  }
+  @media (min-width: 960px) {
+    h1 {
+      font-size: xxx-large;
+    }
+    .projects {
+      padding: 20px;
+    }
+    p {
+      font-size: larger;
+    }
+  }
+  @media (min-width:1200px){
+   section{
+    padding: 2rem;
+   }
+   h1{
+    margin:0 0 1rem 1rem;
+   }
+  }
+  

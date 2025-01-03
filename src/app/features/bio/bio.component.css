@@ -1,0 +1,7 @@
+.pdf-on-side{
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+embed{
+    height: 100%;
+}
