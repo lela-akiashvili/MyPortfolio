@@ -1,7 +1,17 @@
-.pdf-on-side{
-    display: flex;
-    /* flex-wrap: wrap; */
+div.pdf-on-side {
+  display: flex;
 }
-embed{
-    height: 100%;
+img {
+  width: unset;
+  max-width: 25%;
+  height: 100%;
+}
+@media (max-width: 920px) {
+  div.pdf-on-side {
+    flex-wrap: wrap;
+  }
+  img {
+    width: unset;
+    max-width: 100%;
+  }
 }
